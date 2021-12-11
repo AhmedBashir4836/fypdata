@@ -5,11 +5,6 @@ Created on Sun Oct  3 02:58:19 2021
 @author: Acer Asjad
 """
 # import the necessary packages
-
-
-
-from tensorflow import keras 
-
 from keras.preprocessing.image import img_to_array
 from keras.applications import imagenet_utils
 import numpy as np
@@ -56,7 +51,7 @@ def load_model():
     model.add(Dense(512, activation='relu'))
     #model.add(Dropout(0.4))
     model.add(Dense(4, activation='softmax'))
-    model.load_weights("final-model.h5")
+    model.load_weights("model.h5")
     model.compile(loss='categorical_crossentropy',
     #              optimizer = 'adam',
                   optimizer=optimizers.RMSprop(lr=2e-5),
